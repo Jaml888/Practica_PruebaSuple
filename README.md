@@ -127,7 +127,91 @@ Este es un repositorio para una prueba practica para mi prueba supletorio
 
 **📝 Respuesta:**
 
-<!-- Escribe aquí tu explicación y evidencia para la Pregunta 2 -->
+### Función del archivo `.gitignore`
+
+El archivo `.gitignore` es un archivo de configuración especial que le dice a Git qué archivos y carpetas debe **ignorar** y no rastrear en el control de versiones. Esto es útil para excluir:
+
+- **Archivos temporales** generados por el sistema o editores
+- **Archivos de configuración local** que no deben compartirse
+- **Archivos de compilación** y binarios
+- **Archivos de logs** que pueden ser muy grandes
+- **Carpetas de dependencias** que se pueden regenerar
+- **Archivos sensibles** como contraseñas o claves
+
+### Reglas configuradas en este proyecto:
+
+```gitignore
+# Ignorar todos los archivos con extensión .log
+*.log
+
+# Ignorar la carpeta llamada temp/ y todo su contenido
+temp/
+```
+
+**Explicación de las reglas:**
+- `*.log`: El asterisco es un comodín que coincide con cualquier nombre de archivo, y `.log` especifica la extensión. Esta regla ignora todos los archivos que terminen en `.log`.
+- `temp/`: La barra al final indica que es una carpeta. Esta regla ignora toda la carpeta `temp` y todo su contenido, sin importar qué archivos contenga.
+
+### Evidencia de que los archivos y carpetas no están siendo rastreadas por Git
+
+Para demostrar que las reglas del `.gitignore` funcionan correctamente, se realizaron las siguientes pruebas:
+
+#### 1. Creación de archivos de prueba
+
+Se crearon archivos y carpetas que deberían ser ignorados:
+
+```bash
+# Crear archivos .log
+echo "Este es un archivo de log" > archivo1.log
+echo "Otro archivo de log" > debug.log
+
+# Crear carpeta temp con archivos
+mkdir temp
+echo "Archivo temporal 1" > temp/archivo_temp1.txt
+echo "Archivo temporal 2" > temp/archivo_temp2.txt
+```
+
+#### 2. Verificación del estado de Git
+
+Al ejecutar `git status`, se puede observar que estos archivos **NO aparecen** en la lista de archivos no rastreados:
+
+```bash
+git status
+```
+
+**Resultado esperado:**
+- Los archivos `archivo1.log`, `debug.log` y la carpeta `temp/` no aparecen en la salida de `git status`
+- Solo se muestran los archivos que SÍ deben ser rastreados por Git
+
+#### 3. Verificación con `git check-ignore`
+
+Para confirmar que Git está aplicando correctamente las reglas, se puede usar:
+
+```bash
+git check-ignore archivo1.log
+git check-ignore temp/archivo_temp1.txt
+```
+
+**Resultado:** Estos comandos devuelven el nombre del archivo, confirmando que están siendo ignorados.
+
+#### 4. Verificación de archivos rastreados
+
+Para contrastar, se creó un archivo que SÍ debe ser rastreado:
+
+```bash
+echo "Este archivo SÍ debe ser rastreado" > archivo_normal.txt
+git status
+```
+
+**Resultado:** El archivo `archivo_normal.txt` SÍ aparece en la lista de archivos no rastreados, confirmando que Git funciona correctamente y solo ignora lo especificado en `.gitignore`.
+
+### Beneficios de usar `.gitignore`
+
+1. **Mantiene el repositorio limpio** al excluir archivos innecesarios
+2. **Evita conflictos** al no incluir archivos de configuración personal
+3. **Reduce el tamaño del repositorio** al no versionar archivos temporales
+4. **Mejora la seguridad** al evitar subir accidentalmente archivos sensibles
+5. **Facilita la colaboración** al mantener un estándar de archivos a versionar
 
 ---
 
