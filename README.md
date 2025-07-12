@@ -41,7 +41,72 @@ Este es un repositorio para una prueba practica para mi prueba supletorio
 
 **📝 Respuesta:**
 
-<!-- Escribe aquí tu respuesta a la Pregunta 1 -->
+### Diferencias entre `git clone`, `fork` y `git pull`:
+
+#### `git clone`
+- **Definición**: Es un comando de Git que permite crear una copia local completa de un repositorio remoto.
+- **Propósito**: Descargar todo el historial de commits, ramas y archivos de un repositorio desde un servidor remoto (como GitHub) a tu máquina local.
+- **Cuándo usar**: Cuando quieres trabajar con un repositorio existente en tu computadora local.
+- **Ejemplo**: `git clone https://github.com/usuario/repositorio.git`
+
+#### `fork`
+- **Definición**: Es una funcionalidad específica de GitHub (y otras plataformas similares) que permite crear una copia independiente de un repositorio en tu cuenta personal.
+- **Propósito**: Crear tu propia versión del repositorio original para poder hacer cambios sin afectar el proyecto original.
+- **Cuándo usar**: Cuando quieres contribuir a un proyecto de código abierto o trabajar en tu propia versión de un proyecto.
+- **Características**: 
+  - El fork mantiene una conexión con el repositorio original
+  - Puedes sincronizar tu fork con los cambios del repositorio original
+  - Permite crear Pull Requests hacia el repositorio original
+
+#### `git pull`
+- **Definición**: Es un comando de Git que combina `git fetch` (descargar cambios) y `git merge` (integrar cambios).
+- **Propósito**: Actualizar tu rama local con los cambios más recientes del repositorio remoto.
+- **Cuándo usar**: Cuando quieres obtener y integrar los últimos cambios del repositorio remoto a tu rama local actual.
+- **Ejemplo**: `git pull origin main`
+
+### Relación entre los conceptos:
+1. **Fork** → Crea una copia independiente del repositorio en tu cuenta de GitHub
+2. **Clone** → Descarga el repositorio (original o fork) a tu máquina local
+3. **Pull** → Mantiene tu repositorio local actualizado con los cambios del remoto
+
+### Proceso práctico realizado:
+
+#### ¿Cómo se realizó el fork?
+
+1. **Acceso al repositorio original**: Se navegó al repositorio original en GitHub usando la URL proporcionada por el docente.
+2. **Botón de Fork**: Se localizó y se hizo clic en el botón "Fork" ubicado en la esquina superior derecha de la página del repositorio.
+3. **Selección de cuenta**: Se seleccionó la cuenta personal de GitHub donde se deseaba crear el fork.
+4. **Confirmación**: Se confirmó la creación del fork, lo que generó una copia independiente del repositorio en la cuenta personal.
+5. **Verificación**: Se verificó que el fork se creó correctamente navegando a la nueva URL del repositorio fork.
+
+#### ¿Cómo se realizó el clone del fork?
+
+1. **Obtención de la URL**: Se copió la URL del repositorio fork desde la barra de direcciones del navegador o desde el botón "Code" en GitHub.
+2. **Comando de clonación**: Se ejecutó el comando `git clone` en la terminal:
+   ```bash
+   git clone https://github.com/mi-usuario/Practica_PruebaSuple.git
+   ```
+3. **Descarga del repositorio**: Git descargó automáticamente todos los archivos, historial de commits y ramas del fork.
+4. **Navegación al directorio**: Se cambió al directorio del repositorio clonado:
+   ```bash
+   cd Practica_PruebaSuple
+   ```
+
+#### ¿Cómo se verificó que se estaba trabajando sobre el fork y no sobre el repositorio original?
+
+1. **Verificación del origen remoto**: Se ejecutó el comando para verificar la URL del repositorio remoto:
+   ```bash
+   git remote -v
+   ```
+   La salida mostró que el origen apuntaba a la URL del fork personal, no al repositorio original.
+
+2. **Verificación en GitHub**: Se navegó al repositorio en GitHub y se confirmó que la URL en la barra de direcciones correspondía al fork personal.
+
+3. **Verificación del propietario**: Se verificó que el propietario del repositorio en GitHub era la cuenta personal, no la cuenta del docente o del repositorio original.
+
+4. **Prueba de escritura**: Se realizó una pequeña modificación de prueba para confirmar que se tenían permisos de escritura en el fork.
+
+**Resultado**: Se confirmó exitosamente que se estaba trabajando sobre el fork personal y no sobre el repositorio original, lo que permite realizar cambios de forma segura sin afectar el proyecto original.
 
 ---
 
