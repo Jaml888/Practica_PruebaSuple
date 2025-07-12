@@ -1,13 +1,13 @@
 # Practica_PruebaSuple
 Este es un repositorio para una prueba practica para mi prueba supletorio
 
-# Universidad [Nombre de la Universidad]  
-## Facultad de [Nombre de la Facultad]  
+# Universidad Tecnica de Ambato 
+## Facultad de Sistemas, Electronica e Industrial 
 ### Carrera de Ingeniería en Software  
 
 **Asignatura:** Manejo y Configuración de Software  
-**Nombre del Estudiante:** ___________________________  
-**Fecha:** ___________________  
+**Nombre del Estudiante:** Jaim Mariño 
+**Fecha:** 12/7/2025
 
 ---
 
