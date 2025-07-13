@@ -241,7 +241,179 @@ git status
 
 **📝 Respuesta:**
 
-<!-- Escribe aquí tu respuesta completa a la Pregunta 3 -->
+### Comandos exactos utilizados desde la inicialización de Git Flow hasta el cierre de la feature:
+
+#### 1. Verificación de la versión de Git Flow
+```bash
+git flow version
+```
+**Salida:** `1.12.3 (AVH Edition)`
+
+#### 2. Inicialización de Git Flow
+```bash
+git flow init
+```
+**Configuración realizada:**
+- Branch para producción: `main`
+- Branch para desarrollo: `develop`
+- Prefijos de ramas: `feature/`, `bugfix/`, `release/`, `hotfix/`, `support/`
+- Prefijo de versiones: (vacío)
+- Directorio de hooks: `C:/Users/User/Practica_PruebaSuple/.git/hooks`
+
+#### 3. Verificación de las ramas creadas
+```bash
+git branch -a
+```
+**Salida:**
+```
+* develop
+  main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+```
+
+#### 4. Creación de la rama feature
+```bash
+git flow feature start ingresar-encabezado
+```
+**Salida:**
+```
+Switched to a new branch 'feature/ingresar-encabezado'
+
+Summary of actions:
+- A new branch 'feature/ingresar-encabezado' was created, based on 'develop'
+- You are now on branch 'feature/ingresar-encabezado'
+
+Now, start committing on your feature. When done, use:
+     git flow feature finish ingresar-encabezado
+```
+
+#### 5. Verificación del estado de trabajo
+```bash
+git status
+```
+**Salida:**
+```
+On branch feature/ingresar-encabezado
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+#### 6. Agregar cambios al staging area
+```bash
+git add .
+```
+
+#### 7. Realizar commit con los datos personales
+```bash
+git commit -m "Datos Personales del estudiante"
+```
+**Salida:**
+```
+[feature/ingresar-encabezado 1c5333a] Datos Personales del estudiante
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+```
+
+#### 8. Finalizar la feature
+```bash
+git flow feature finish ingresar-encabezado
+```
+**Salida:**
+```
+Switched to branch 'develop'
+Updating 5434209..1c5333a
+Fast-forward
+ README.md | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+Deleted branch feature/ingresar-encabezado (was 1c5333a).
+
+Summary of actions:
+- The feature branch 'feature/ingresar-encabezado' was merged into 'develop'
+- Feature branch 'feature/ingresar-encabezado' has been locally deleted
+- You are now on branch 'develop'
+```
+
+#### 9. Verificación final del estado
+```bash
+git status
+git log --oneline
+```
+
+### Descripción del proceso seguido:
+
+#### **Fase 1: Inicialización**
+- **Propósito**: Configurar Git Flow en el repositorio para establecer un flujo de trabajo estructurado
+- **Acción**: Se inicializó Git Flow con las ramas por defecto `main` (producción) y `develop` (desarrollo)
+- **Resultado**: Se creó automáticamente la rama `develop` a partir de `main`
+
+#### **Fase 2: Creación de Feature**
+- **Propósito**: Crear un entorno aislado para desarrollar la funcionalidad "ingresar-encabezado"
+- **Acción**: Se creó la rama `feature/ingresar-encabezado` basada en `develop`
+- **Resultado**: Se cambió automáticamente a la nueva rama de feature
+
+#### **Fase 3: Desarrollo**
+- **Propósito**: Completar los datos personales del estudiante en el encabezado del README.md
+- **Acción**: Se modificó el archivo README.md con los datos:
+  - Universidad: Universidad Técnica de Ambato
+  - Facultad: Facultad de Sistemas, Electrónica e Industrial
+  - Nombre: Jaim Mariño
+  - Fecha: 12/7/2025
+- **Resultado**: Se realizó un commit con los cambios
+
+#### **Fase 4: Finalización**
+- **Propósito**: Integrar la feature completada de vuelta a la rama de desarrollo
+- **Acción**: Se ejecutó `git flow feature finish` que:
+  - Fusionó la feature en `develop`
+  - Eliminó la rama de feature local
+  - Cambió de vuelta a la rama `develop`
+- **Resultado**: Los cambios están ahora integrados en `develop` y listos para futuras releases
+
+### Reflexión sobre las ventajas de aplicar Git Flow:
+
+#### **En contextos colaborativos:**
+
+1. **Separación clara de responsabilidades**:
+   - `main`: Código en producción, siempre estable
+   - `develop`: Código en desarrollo, integrando features
+   - `feature/*`: Desarrollo aislado de funcionalidades específicas
+
+2. **Prevención de conflictos**:
+   - Cada desarrollador trabaja en su propia rama de feature
+   - Los cambios se integran de forma controlada a través de `develop`
+   - Se evita que cambios incompletos lleguen a producción
+
+3. **Trazabilidad mejorada**:
+   - Cada feature tiene su propia rama con commits específicos
+   - Es fácil identificar qué cambios pertenecen a cada funcionalidad
+   - Facilita la revisión de código y debugging
+
+#### **En proyectos de larga duración:**
+
+1. **Gestión de releases**:
+   - Permite crear ramas `release/*` para preparar versiones
+   - Facilita la corrección de bugs críticos con `hotfix/*`
+   - Mantiene un historial limpio de versiones
+
+2. **Escalabilidad**:
+   - El flujo se mantiene consistente independientemente del tamaño del equipo
+   - Permite trabajar en múltiples features simultáneamente
+   - Facilita la integración continua
+
+3. **Mantenimiento a largo plazo**:
+   - Estructura clara para nuevos desarrolladores
+   - Facilita la identificación de problemas en versiones específicas
+   - Permite rollbacks controlados si es necesario
+
+#### **Beneficios generales:**
+
+- **Calidad del código**: El flujo estructurado promueve mejores prácticas
+- **Documentación implícita**: La estructura de ramas documenta el proceso de desarrollo
+- **Flexibilidad**: Permite adaptar el flujo según las necesidades del proyecto
+- **Automatización**: Facilita la implementación de CI/CD pipelines
 
 ---
 
