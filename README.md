@@ -670,4 +670,34 @@ Un **conflicto en Git** ocurre cuando se intentan fusionar dos ramas que han mod
 
 **📝 Respuesta:**
 
-<!-- Escribe aquí tu respuesta completa a la Pregunta 6 -->
+### 📝 Respuesta Pregunta 6: Limpieza y Versionamiento Semántico
+
+#### Proceso Realizado Paso a Paso
+
+1.  Se trabajó en la rama `develop` del fork, donde se eliminó el archivo `archivoA.txt` para limpiar el proyecto.
+2.  Se realizó un merge local de la rama `develop` hacia la rama `main` para consolidar todos los cambios en la rama principal local.
+3.  Se ejecutó un push especial (`git push origin main:develop`) para actualizar la rama `develop` remota con el contenido de la rama `main` local, cumpliendo con los requisitos del ejercicio.
+4.  Finalmente, se creó un Pull Request desde la rama `develop` de nuestro fork (`Jaml888/Practica_PruebaSuple`) hacia la rama `main` del repositorio original (`JaimXD/Practica_PruebaSuple`).
+
+#### Explicación del Versionamiento Semántico (SemVer)
+
+El **Versionamiento Semántico (SemVer)** es un estándar de reglas simples para asignar números de versión a un proyecto de software. Su objetivo principal es comunicar la naturaleza de los cambios entre una versión y otra, permitiendo a los desarrolladores gestionar las dependencias de forma segura y predecible. Un número de versión SemVer siempre sigue el formato `MAJOR.MINOR.PATCH`.
+
+* **MAJOR (Versión Mayor):** Se incrementa cuando se introducen cambios incompatibles con versiones anteriores (breaking changes). Si un usuario actualiza a una nueva versión MAJOR, es posible que tenga que cambiar su propio código para que siga funcionando.
+* **MINOR (Versión Menor):** Se incrementa cuando se añade nueva funcionalidad de una manera que es **compatible** con versiones anteriores. El software puede hacer más cosas, pero no rompe lo que ya existía.
+* **PATCH (Parche):** Se incrementa cuando se realizan correcciones de errores (bug fixes) que son compatibles con versiones anteriores. Simplemente arregla algo que no funcionaba bien.
+
+**Ejemplos de Aplicación:**
+* **Versión `1.3.4`**: Se descubre un error de seguridad. Se corrige. La nueva versión será **`1.3.5`** (cambio de PATCH).
+* **Versión `1.3.5`**: Se añade un nuevo botón de "Exportar a PDF" que no afecta a ninguna otra funcionalidad. La nueva versión será **`1.4.0`** (cambio de MINOR, se resetea PATCH).
+* **Versión `1.4.0`**: Se decide cambiar el nombre de una función principal que usan otros desarrolladores. Este es un cambio que "rompe" el código de quienes dependen de esa función. La nueva versión será **`2.0.0`** (cambio de MAJOR, se resetean MINOR y PATCH).
+
+#### Enlace al Pull Request Final
+[Pull Request final hacia el repositorio original](https://github.com/JaimXD/Practica_PruebaSuple/pull/1)
+
+
+#### Reflexión Final
+
+El uso de **Forks y Pull Requests** es la base de la colaboración en el desarrollo de software moderno, especialmente en el código abierto. Permite que cualquier persona en el mundo pueda contribuir a un proyecto de forma segura, sin tener acceso directo al código original. El sistema de Pull Requests asegura que cada cambio sea revisado, discutido y probado por los mantenedores del proyecto, garantizando una alta calidad y estabilidad en el código.
+
+Por su parte, el **Versionamiento Semántico** es el lenguaje universal que permite que este ecosistema funcione sin caer en el caos. Proporciona un contrato claro sobre el impacto de actualizar una dependencia. Sin SemVer, cada actualización sería un riesgo, pero con él, los equipos pueden tomar decisiones informadas, automatizar actualizaciones de parches y saber cuándo necesitan prepararse para cambios mayores. Juntos, estos conceptos fomentan la colaboración, la calidad y la estabilidad a gran escala.
