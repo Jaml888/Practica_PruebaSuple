@@ -503,7 +503,48 @@ Se complementan perfectamente en un flujo de trabajo colaborativo:
 
 ### Parte Práctica:
 
-<!-- Aquí se debe documentar el proceso práctico realizado -->
+#### 📝 Respuesta Pregunta 4: Trabajo con Issues y Pull Requests
+
+##### **Resumen del Procedimiento Realizado**
+
+1. **Configuración del repositorio**: Se configuró el repositorio activando la funcionalidad de "Issues" y se añadió una regla de protección a la rama `main` para requerir una revisión de aprobación antes de cualquier fusión.
+
+2. **Creación del Issue**: Se creó un Issue para registrar y dar seguimiento a la tarea de responder la Pregunta 4.
+
+3. **Trabajo en rama develop**: Se trabajó en la rama `develop`, añadiendo las respuestas teóricas sobre Issues y Pull Requests a este mismo archivo `README.md`.
+
+4. **Creación del Pull Request**: Se creó un Pull Request desde la rama `develop` hacia la rama `main` para proponer la integración de los cambios.
+
+5. **Vinculación con Issue**: Se vinculó el Pull Request con el Issue usando la palabra clave `Closes` para asegurar su cierre automático al fusionar.
+
+6. **Solicitud de revisión**: Se solicitó la revisión al docente, quien fue añadido previamente como colaborador para poder aprobar los cambios.
+
+##### **Número del Issue Creado**
+
+El issue creado para esta tarea es el **#1**.
+
+##### **Enlace al Pull Request**
+
+El enlace al Pull Request es el siguiente:
+[Pull Request #2 - Finaliza la Pregunta 4: Issues y Pull Requests](https://github.com/Jaml888/Practica_PruebaSuple/pull/2)
+
+##### **Comprobación de la Revisión Obligatoria**
+
+Se confirmó que la regla de protección en la rama `main` estaba activa porque, al crear el Pull Request, el botón para fusionar ("Merge pull request") estaba deshabilitado. En su lugar, GitHub mostraba el siguiente mensaje de estado:
+
+> **"At least 1 approving review is required to merge this pull request"**
+
+Esto impide la fusión hasta que el revisor asignado (el docente) apruebe los cambios, confirmando que la configuración de protección de rama funciona correctamente.
+
+##### **Resultado del Proceso**
+
+- ✅ **Issue creado y vinculado** correctamente con el Pull Request
+- ✅ **Protección de rama activa** que requiere revisión obligatoria
+- ✅ **Pull Request aprobado** por el docente (JaimXD)
+- ✅ **Fusión exitosa** de los cambios a la rama `main`
+- ✅ **Issue cerrado automáticamente** al fusionar el Pull Request
+
+Este proceso demuestra el flujo completo de trabajo colaborativo usando Issues y Pull Requests, desde la identificación de una tarea hasta su implementación y revisión.
 
 ---
 
