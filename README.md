@@ -580,7 +580,69 @@ Este proceso demuestra el flujo completo de trabajo colaborativo usando Issues y
 
 **📝 Respuesta:**
 
-<!-- Escribe aquí tu respuesta completa a la Pregunta 5 -->
+#### 📝 Respuesta Pregunta 5: Conflictos y Pull Requests
+
+##### **Procedimiento Completo Realizado**
+
+El flujo de trabajo para resolver esta pregunta fue el siguiente:
+
+###### **1. Creación de Ramas**
+Se crearon dos ramas, `ramaA` y `ramaB`, ambas a partir de la última versión de la rama `main` para asegurar que partían del mismo punto.
+
+###### **2. Generación y Resolución de Conflicto**
+
+- **En ramaA**: Se creó el archivo `archivoA.txt` con el contenido "Contenido A" y se realizó un commit.
+- **En ramaB**: Se creó el mismo archivo `archivoA.txt` pero con el contenido "Contenido B" y se realizó un commit.
+- **Fusión conflictiva**: Se intentó fusionar `ramaB` sobre `ramaA` con `git merge ramaB`, lo cual generó un conflicto de tipo `add/add` esperado.
+- **Resolución manual**: El conflicto fue resuelto editando manualmente el archivo `archivoA.txt` para dejar el contenido final "Contenido combinado A+B".
+- **Finalización de fusión**: Se finalizó la fusión con `git add archivoA.txt` y `git commit`, creando un commit de fusión en `ramaA` que unificó el trabajo de ambas ramas.
+
+###### **3. Merge hacia develop y Creación de Pull Request**
+
+- **Integración controlada**: La integración de los cambios en `develop` se gestionó a través de un Pull Request para asegurar un proceso controlado y revisable.
+- **Subida de cambios**: La rama `ramaA` (ya con el conflicto resuelto) se subió al repositorio remoto.
+- **Creación del PR**: Se creó un Pull Request en GitHub configurando `base: develop` y `compare: ramaA`.
+- **Vinculación opcional**: Si se creó un issue, se vinculó en la descripción del PR para su cierre automático.
+
+###### **4. Verificación de Revisión y Aprobación**
+
+- **Configuración de protección**: Se configuró previamente una regla de protección sobre la rama `develop` que exigía al menos una aprobación para poder fusionar cualquier Pull Request.
+- **Solicitud de revisión**: Al crear el PR, se solicitó la revisión del docente.
+- **Comprobación de funcionamiento**: Se pudo comprobar que la regla funcionaba porque el botón "Merge pull request" estaba deshabilitado con el mensaje "At least 1 approving review is required...".
+- **Aprobación**: Solo después de que el docente aprobó los cambios, el botón de fusión se activó.
+
+###### **5. Eliminación de Ramas**
+
+- **Limpieza remota**: Una vez que el Pull Request fue fusionado exitosamente en `develop`, se procedió a la limpieza.
+- **Eliminación remota**: Las ramas `ramaA` y `ramaB` fueron eliminadas del repositorio remoto con el comando `git push origin --delete <nombre-rama>`.
+- **Eliminación local**: Posteriormente, las copias locales de las ramas fueron eliminadas con `git branch -d <nombre-rama>`.
+
+##### **Enlace al Pull Request**
+
+**Pull Request para la Pregunta 5**
+[Pull Request #5 - Finaliza Pregunta 5: Resuelve conflicto y fusiona en develop](https://github.com/Jaml888/Practica_PruebaSuple/pull/5)
+
+##### **Explicación del Conflicto en Git**
+
+Un **conflicto en Git** ocurre cuando se intentan fusionar dos ramas que han modificado las mismas líneas del mismo archivo de formas diferentes. Git es muy bueno uniendo cambios que ocurren en distintas partes de un proyecto, pero cuando dos historiales de cambios compiten por la misma línea, no puede decidir automáticamente qué versión es la "correcta". En ese momento, detiene el proceso de fusión y le pide al desarrollador que intervenga para que decida cómo combinar los cambios.
+
+**En este caso específico**, el conflicto ocurrió porque:
+- Tanto `ramaA` como `ramaB` crearon un archivo con el mismo nombre y en la misma ubicación (`archivoA.txt`)
+- Cada rama tenía contenido distinto ("Contenido A" vs "Contenido B")
+- Git no supo cuál de las dos versiones del archivo debía conservar
+- Se generó un conflicto de tipo `add/add` que requirió intervención manual para definir el contenido final
+
+**Tipos de conflictos comunes:**
+- **add/add**: Dos ramas crean el mismo archivo con contenido diferente
+- **modify/modify**: Dos ramas modifican las mismas líneas de un archivo
+- **delete/modify**: Una rama elimina un archivo que otra rama modificó
+- **delete/delete**: Dos ramas eliminan el mismo archivo
+
+**Estrategias de resolución:**
+1. **Resolución manual**: Editar el archivo conflictivo y elegir qué cambios mantener
+2. **Resolución con herramientas**: Usar herramientas de fusión visual
+3. **Abortar la fusión**: Cancelar el proceso con `git merge --abort`
+4. **Aceptar una versión**: Usar `git checkout --ours` o `git checkout --theirs`
 
 ---
 
