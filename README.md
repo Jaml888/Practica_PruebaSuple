@@ -446,7 +446,64 @@ git log --oneline
 
 **📝 Respuesta:**
 
-<!-- Escribe aquí tu respuesta completa a la Pregunta 4 -->
+## Parte Teórica: Explicaciones Clave
+
+### 1. ¿Qué es un Issue en GitHub?
+
+Un **issue** (o incidencia) es una herramienta de seguimiento que se usa para registrar tareas, mejoras, ideas o errores (bugs) relacionados con un proyecto. Funciona como un foro de discusión para un tema específico.
+
+**Características principales:**
+- **No contiene código**. Es el lugar donde se discute qué se debe hacer o por qué algo no funciona.
+- **Permite la colaboración**: El equipo puede comentar, asignar responsables y etiquetar los issues para organizar el trabajo.
+- **Facilita el seguimiento**: Permite rastrear el progreso de tareas y problemas desde su identificación hasta su resolución.
+
+**Ejemplos de uso:**
+- "El botón de login no funciona en Firefox"
+- "Sugerencia: Añadir un modo oscuro a la aplicación"
+- "Bug: La aplicación se cuelga al cargar archivos grandes"
+- "Mejora: Optimizar el tiempo de carga de la página principal"
+
+### 2. ¿Qué es un Pull Request (PR) y cuál es su finalidad?
+
+Un **pull request** (o solicitud de extracción) es una propuesta formal para fusionar (merge) una serie de commits desde una rama hacia otra (generalmente de una rama de feature a develop, o de develop a main).
+
+**Finalidad principal:**
+- **Revisión de código**: Es el momento en que le dices al equipo: "He terminado mi trabajo, aquí está el código. Por favor, revísenlo antes de que se integre al proyecto principal".
+- **Contiene los cambios de código** y permite una discusión línea por línea sobre las modificaciones propuestas.
+- **Permite la integración continua**: Se pueden ejecutar pruebas automáticas sobre el código del PR antes de fusionarlo.
+
+**Características clave:**
+- Muestra las diferencias (diffs) entre las ramas
+- Permite comentarios específicos en líneas de código
+- Facilita la revisión colaborativa
+- Integra con sistemas de CI/CD para validaciones automáticas
+
+### 3. Diferencia y Relación entre Issues y Pull Requests
+
+| **Característica** | **Issue** | **Pull Request (PR)** |
+|-------------------|-----------|----------------------|
+| **Propósito** | Discutir y rastrear una tarea o problema. (El qué y el porqué). | Proponer y revisar una solución en código. (El cómo). |
+| **Contenido** | Principalmente texto, imágenes, discusiones. | Commits, diferencias de código (diffs), discusiones sobre el código. |
+| **Estado** | Se abre para iniciar una discusión. Se cierra cuando la tarea está resuelta. | Se abre para proponer cambios. Se cierra (fusiona) cuando el código es aprobado. |
+
+### Relación entre Issues y Pull Requests
+
+Se complementan perfectamente en un flujo de trabajo colaborativo:
+
+1. **Se crea un Issue** para describir un problema (ej: "Issue #42: El logo se ve borroso").
+2. **Un desarrollador crea una rama** para trabajar en ese problema.
+3. **Una vez que tiene la solución**, abre un Pull Request y en la descripción escribe "Cierra el Issue #42" o "Soluciona #42".
+4. **Al fusionar el Pull Request**, GitHub automáticamente cierra el Issue vinculado.
+
+**Beneficios de esta relación:**
+- **Trazabilidad completa**: Se puede seguir el ciclo completo desde la identificación del problema hasta su solución
+- **Documentación automática**: Los issues cerrados automáticamente quedan documentados con su solución
+- **Colaboración mejorada**: Facilita la comunicación entre desarrolladores y stakeholders
+- **Gestión de proyectos**: Permite estimar tiempos y asignar recursos de manera más eficiente
+
+### Parte Práctica:
+
+<!-- Aquí se debe documentar el proceso práctico realizado -->
 
 ---
 
